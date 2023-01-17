@@ -11,7 +11,7 @@ function renderForestImages(images) {
   let container = document.querySelector(".carousel-inner");
   for (let i = 0; i < images.length; i++) {
     let image = images[i];
-    if (i == 0) {
+    if (i === 0) {
       container.innerHTML += ` <div class="carousel-item active">
         <img src="${image.src.landscape}" class="d-block w-100" alt="...">
     </div>`;
