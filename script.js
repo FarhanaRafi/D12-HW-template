@@ -74,10 +74,15 @@ function searchImage() {
   getImages(searchInput);
 }
 
-// function viewImage(event) {
-//   let card = event.target.parentNode.parentNode.parentNode;
-//   let id = card.querySelector("svg image").id;
-
-// }
+function viewImage(event) {
+  let card = event.target.closest(".card").querySelector("svg image").id;
+  let modalImage = document.querySelector(".modal-body");
+  modalImage.innerHTML = "";
+  cardImages.forEach((cardImage) => {
+    if (cardImage.id == card) {
+      modalImage.innerHTML = `<img src="${cardImage.src.medium}" alt="">`;
+    }
+  });
+}
 
 window.onload = loadCarousel();
